@@ -1,0 +1,70 @@
+/* CSS Customizado global para a aplicação */
+
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.p-inputtext, .p-calendar, .p-autocomplete, .p-dropdown {
+  width: 100%;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  background: #51cbce;
+}
+
+.p-datepicker-trigger {
+  background: #51cbce;
+  border: 1px solid #51cbce;
+}
+
+.p-button:enabled:active, .p-button:enabled:hover {
+  background: #51cbce;
+  border: 1px solid #51cbce;
+}
+
+h6.card-title {
+  color: #51cbce;
+}
+
+.p-inputtext:enabled:focus,
+.p-calendar:enabled:focus,
+.p-autocomplete:enabled:focus,
+.p-inputtext:hover:not(.p-dropdown-label),
+.p-calendar:hover,
+.p-autocomplete:hover,
+.p-dropdown:hover {
+  box-shadow: 0 0 0 0.1em #51cbce;
+  border-color: #51cbce;
+}
+
+th.p-sortable-column {
+  border: none !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 0.5em;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

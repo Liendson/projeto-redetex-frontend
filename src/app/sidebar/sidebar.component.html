@@ -1,0 +1,17 @@
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a href="http://www.creative-tim.com" class="simple-text">
+      <div class="logo-image-small">
+        <img src="assets/images/redetex-ambientacoes.png">
+      </div>
+    </a>
+  </div>
+  <ul class="nav">
+    <li *ngFor="let item of items" routerLinkActive="active" [class]="item.class">
+      <a [routerLink]="[item.path]">
+        <i class="nc-icon {{ item.icon }}"></i>
+        <p>{{ item.title }}</p>
+      </a>
+    </li>
+  </ul>
+</div>

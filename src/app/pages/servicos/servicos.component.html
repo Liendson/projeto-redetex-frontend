@@ -1,0 +1,107 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <h6 class="card-title"><i class="nc-icon nc-zoom-split text-primary"></i> Consultar</h6>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formulario">
+          <div class="row">
+            <div class="col-md-4">
+              <label>Nome do Cliente</label>
+              <div class="form-group">
+                <input pInputText formControlName="nomeDoCliente">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo do Orçamento</label>
+              <div class="form-group">
+                <p-dropdown [options]="tiposDeProdutos" formControlName="tipoDoProduto" optionLabel="label" optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Situação</label>
+              <div class="form-group">
+                <p-dropdown [options]="situacoes" formControlName="situacao" optionLabel="label" optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Data Inicial do Orçamento</label>
+              <div class="form-group">
+                <p-calendar [showIcon]="true" [showButtonBar]="true" formControlName="dataInicial"></p-calendar>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Data Final do Orçamento</label>
+              <div class="form-group">
+                <p-calendar [showIcon]="true" [showButtonBar]="true" formControlName="dataFinal"></p-calendar>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-center">
+            <div class="btn-group">
+              <button (click)="limparFormulario()" class="btn btn-primary btn-round">
+                <i class="nc-icon nc-refresh-69"></i> Limpar
+              </button>
+              <button (click)="pesquisar()" class="btn btn-primary btn-round">
+                <i class="nc-icon nc-zoom-split"></i> Pesquisar
+              </button>
+              <button (click)="openDialog(null, 3)" class="btn btn-primary btn-round">
+                <i class="nc-icon nc-simple-add"></i> Incluir
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card card-user" *ngIf="resultado.length > 0">
+      <div class="card-header">
+        <p class="card-category"><i class="nc-icon nc-zoom-split text-primary"></i> Resultado da Consulta</p>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 pr-1">
+            <p-table [value]="resultado">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th class="text-muted text-center" pSortableColumn>Nome do Cliente</th>
+                  <th class="text-muted text-center" pSortableColumn>Tipo do Serviço</th>
+                  <th class="text-muted text-center" pSortableColumn>Data/Hora</th>
+                  <th class="text-muted text-center" pSortableColumn>Status do Serviço</th>
+                  <th class="text-muted text-center" pSortableColumn>Ações</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-servico>
+                <tr>
+                  <td class="text-center">{{ servico.nomeDoCliente }}</td>
+                  <td class="text-center">{{ servico.tipoDoProcedimento }}</td>
+                  <td class="text-center">{{ servico.dataHoraProcedimento | date: 'dd/MM/yyyy HH:mm' }}</td>
+                  <td class="text-center"><app-mensagem [servico]="servico"></app-mensagem></td>
+                  <td class="text-center">
+                    <div class="row d-flex justify-center">
+                      <div class="btn-group">
+                        <button (click)="openDialog(servico, 1)" pTooltip="Visualizar" tooltipPosition="top" class="btn btn-primary btn-round">
+                          <i class="nc-icon nc-zoom-split"></i>
+                        </button>
+                        <button (click)="openDialog(servico, 2)" pTooltip="Editar" tooltipPosition="top" class="btn btn-primary btn-round">
+                          <i class="nc-icon nc-settings-gear-65"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-center">
+      <div class="btn-group">
+        <button (click)="voltar()" class="btn btn-primary btn-round">
+          <i class="nc-icon nc-minimal-left"></i> Voltar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

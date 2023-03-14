@@ -1,0 +1,245 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <p class="card-category">Dados do Cliente</p>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Nome</label>
+              <div class="form-group">
+                <input [value]="servico.nomeDoCliente" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label>Endereço</label>
+              <div class="form-group">
+                <input [value]="servico.nomeDoCliente" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Telefone</label>
+              <div class="form-group">
+                <input [value]="servico.nomeDoCliente" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>CPF</label>
+              <div class="form-group">
+                <input [value]="servico.nomeDoCliente" pInputText disabled>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card card-user">
+      <div class="card-header">
+        <p class="card-category">Dados do Serviço</p>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Valor Cobrado</label>
+              <div class="form-group">
+                <input [value]="servico.nomeDoCliente" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label>Forma de Pagamento</label>
+              <div class="form-group">
+                <input [value]="servico.nomeDoCliente" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label>Dia/Hora do Serviço</label>
+              <div class="form-group">
+                <input [value]="servico.dataHoraProcedimento | date: 'dd/MM/yyyy HH:mm'" pInputText disabled>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card card-user">
+      <div class="card-header">
+        <p class="card-category">Dados do Produto</p>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12">
+              <label>Tipo do Produto</label>
+              <div class="form-group">
+                <input [value]="servico.tipoDoProcedimento" pInputText disabled>
+              </div>
+            </div>
+          </div>
+          <!-- Rede -->
+          <div class="row" *ngIf="servico.tipoDoProcedimento == 1">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Altura</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo do Gancho</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Cor da Rede</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tamanho da Malha</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+          </div>
+          <!-- Persiana -->
+          <div class="row" *ngIf="servico.tipoDoProcedimento == 2">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Altura</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo do Tecido</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tem Bandô?</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo da Persiana</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+          </div>
+          <!-- Cortina -->
+          <div class="row" *ngIf="servico.tipoDoProcedimento == 3">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Altura</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo da Cortina</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Modelo do Tecido</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo do Trilho</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+          </div>
+          <!-- Varal -->
+          <div class="row" *ngIf="servico.tipoDoProcedimento == 4">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Tipo do Varal</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Quantidade de Varetas</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Cor do Alumínio</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+          </div>
+          <!-- Tela Mosquiteira -->
+          <div class="row" *ngIf="servico.tipoDoProcedimento == 5">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Altura</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Cor do Alumínio</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Tipo da Tela</label>
+              <div class="form-group">
+                <input type="text" pInputText disabled>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row d-flex justify-center">
+      <div class="btn-group">
+        <button (click)="close()" class="btn btn-primary btn-round">
+          <i class="nc-icon nc-minimal-left"></i> Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

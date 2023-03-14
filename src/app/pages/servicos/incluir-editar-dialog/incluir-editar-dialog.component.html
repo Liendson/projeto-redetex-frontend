@@ -1,0 +1,292 @@
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="formulario">
+      <div class="card card-user">
+        <div class="card-header">
+          <h6 class="card-title">
+            <i class="nc-icon nc-circle-10"></i> Dados do Cliente
+          </h6>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <label>Nome do Cliente</label>
+              <div class="form-group">
+                <input pInputText formControlName="nomeDoCliente">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label>Endereço do Cliente</label>
+              <div class="form-group">
+                <input pInputText formControlName="enderecoDoCliente">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Número de Telefone</label>
+              <div class="form-group">
+                <input pInputText formControlName="telefoneDoCliente">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Número de CPF</label>
+              <div class="form-group">
+                <input pInputText formControlName="cpfDoCliente">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <label>Observação Adicional</label>
+              <div class="form-group">
+                <textarea pInputTextarea formControlName="observacaoAdicional"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-user">
+        <div class="card-header">
+          <h6 class="card-title">
+            <i class="nc-icon nc-app"></i> Dados do Produto
+          </h6>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <label>Tipo do Produto</label>
+              <div class="form-group">
+                <p-dropdown [options]="tiposDeProdutos" formControlName="tipoDoProduto" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+          </div>
+          <!-- Rede -->
+          <div class="row" *ngIf="tipoDoProduto == 1">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input pInputText formControlName="largura">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Altura</label>
+              <div class="form-group">
+                <input pInputText formControlName="altura">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo do Gancho</label>
+              <div class="form-group">
+                <p-dropdown [options]="tiposDeGancho" formControlName="tipoDoGancho" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Cor da Rede</label>
+              <div class="form-group">
+                <p-dropdown [options]="coresDeRede" formControlName="corDaRede" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tamanho da Malha</label>
+              <div class="form-group">
+                <p-dropdown [options]="tamanhosDeMalha" formControlName="tamanhoDaMalha" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+          </div>
+          <!-- Persiana -->
+          <div class="row" *ngIf="tipoDoProduto == 2">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input pInputText formControlName="largura">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Altura</label>
+              <div class="form-group">
+                <input pInputText formControlName="altura">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo do Tecido</label>
+              <div class="form-group">
+                <p-dropdown [options]="tiposDeTecido" formControlName="tipoDoTecido" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tem Bandô?</label>
+              <div class="form-group">
+                <p-dropdown [options]="temBandoOpcoes" formControlName="temBando" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo da Persiana</label>
+              <div class="form-group">
+                <p-dropdown [options]="tiposDePersiana" formControlName="tipoDaPersiana" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+          </div>
+          <!-- Cortina -->
+          <div class="row" *ngIf="tipoDoProduto == 3">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input pInputText formControlName="largura">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Altura</label>
+              <div class="form-group">
+                <input pInputText formControlName="altura">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo da Cortina</label>
+              <div class="form-group">
+                <p-dropdown [options]="tiposDeCortina" formControlName="tipoDaCortina" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Modelo do Tecido</label>
+              <div class="form-group">
+                <p-dropdown [options]="modelosDeTecido" formControlName="modeloDoTecido" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Tipo do Trilho</label>
+              <div class="form-group">
+                <p-dropdown [options]="tiposDeTrilho" formControlName="tipoDoTrilho" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+          </div>
+          <!-- Varal -->
+          <div class="row" *ngIf="tipoDoProduto == 4">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input pInputText formControlName="largura">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Tipo do Varal</label>
+              <div class="form-group">
+                <p-dropdown [options]="tiposDeVaral" formControlName="tipoDoVaral" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Quantidade de Varetas</label>
+              <div class="form-group">
+                <input pInputText formControlName="quantidadeDeVaretas">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Cor do Alumínio</label>
+              <div class="form-group">
+                <p-dropdown [options]="coresDeAluminio" formControlName="corDoAluminio" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+          </div>
+          <!-- Tela Mosquiteira -->
+          <div class="row" *ngIf="tipoDoProduto == 5">
+            <div class="col-md-3">
+              <label>Largura</label>
+              <div class="form-group">
+                <input pInputText formControlName="largura">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Altura</label>
+              <div class="form-group">
+                <input pInputText formControlName="altura">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Cor do Alumínio</label>
+              <div class="form-group">
+                <p-dropdown [options]="coresDeAluminio" formControlName="corDoAluminio" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Tipo da Tela</label>
+              <div class="form-group">
+                <p-dropdown [options]="tiposDeTela" formControlName="tipoDaTela" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+          </div>
+          <!-- Tela Mosquiteira -->
+          <div class="row" *ngIf="tipoDoProduto == 6">
+            <div class="col-md-4">
+              <label>Largura</label>
+              <div class="form-group">
+                <input pInputText formControlName="largura">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label>Altura</label>
+              <div class="form-group">
+                <input pInputText formControlName="altura">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label>Cor da Película</label>
+              <div class="form-group">
+                <p-dropdown [options]="coresDePelicula" formControlName="corDaPelicula" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-user">
+        <div class="card-header">
+          <h6 class="card-title">
+            <i class="nc-icon nc-money-coins"></i> Dados do servico
+          </h6>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <label>Valor Cobrado</label>
+              <div class="form-group">
+                <input pInputText formControlName="valorCobrado" currency>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label>Forma de Pagamento</label>
+              <div class="form-group">
+                <p-dropdown [options]="formasDePagamento" formControlName="formaDePagamento" optionLabel="label"
+                  optionValue="value"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label>Dia/Hora do servico</label>
+              <div class="form-group">
+                <p-calendar [showIcon]="true" [showButtonBar]="true" formControlName="diaHoraServico"></p-calendar>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row d-flex justify-center">
+      <div class="btn-group">
+        <button (click)="salvar()" class="btn btn-primary btn-round">
+          <i class="nc-icon nc-check-2"></i> Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
